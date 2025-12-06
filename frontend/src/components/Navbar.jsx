@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
@@ -30,7 +29,7 @@ export default function Navbar() {
           <li className="hover:text-blue-600 transition"><Link to="/">Home</Link></li>
           <li className="hover:text-blue-600 transition"><Link to="/events">Events</Link></li>
           <li className="hover:text-blue-600 transition"><Link to="/gallery">Gallery</Link></li>
-          <li className="hover:text-blue-600 transition"><Link to="/">Team</Link></li>
+          <li className="hover:text-blue-600 transition"><Link to="/team">Team</Link></li>
           <li className="hover:text-blue-600 transition"><Link to="/about">About</Link></li>
           <li className="hover:text-blue-600 transition"><Link to="/sponsors">Sponsors</Link></li>
         </ul>
@@ -52,7 +51,7 @@ export default function Navbar() {
           <li className="hover:text-blue-600 transition"><Link to="/">Home</Link></li>
           <li className="hover:text-blue-600 transition"><Link to="/events">Events</Link></li>
           <li className="hover:text-blue-600 transition"><Link to="/gallery">Gallery</Link></li>
-          <li className="hover:text-blue-600 transition"><Link to="/">Team</Link></li>
+          <li className="hover:text-blue-600 transition"><Link to="/team">Team</Link></li>
           <li className="hover:text-blue-600 transition"><Link to="/about">About</Link></li>
           <li className="hover:text-blue-600 transition"><Link to="/sponsors">Sponsors</Link></li>
         </ul>

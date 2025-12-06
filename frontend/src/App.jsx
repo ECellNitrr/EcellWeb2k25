@@ -7,6 +7,7 @@ import About from './components/About'
 import Gallery from './components/Gallery'
 import Events from './components/Events/Events.jsx'
 import './App.css'
+import Teams from './components/Teams.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/events' element={<Events />} />
         <Route path='/gallery' element={<Gallery />} />
+        <Route path='/team' element={<Teams />} />
       </Routes>
     </>
   )

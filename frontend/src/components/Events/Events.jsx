@@ -77,7 +77,7 @@ const Events = () => {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="page-content pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <header className="py-10 text-center">
@@ -99,9 +99,7 @@ const Events = () => {
                     />
                 </main>
                 
-                <footer className="py-10 text-center text-gray-500 text-sm">
-                    © 2025 E-Cell NITRR. All rights reserved.
-                </footer>
+                
             </div>
             <EventModal event={selectedEvent} onClose={closeModal} />
         </div>
