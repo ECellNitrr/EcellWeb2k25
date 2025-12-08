@@ -1,28 +1,34 @@
+// src/components/ScrollPanel.jsx
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-export default function ScrollSection({ children, bg }) {
+export default function ScrollSection({ children, className = "" }) {
   const ref = useRef(null);
 
+  // Controls animation based on section scroll
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"], 
+    offset: ["start start", "end start"],
   });
 
-  // STRONG TAKEOVER: move up aggressively
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-120%"]);
+  // Upward movement (cover takeover effect)
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
+
+  // Fade out slowly
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+
+  // Slight zoom-out like Apple
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
 
   return (
-    <div ref={ref} className="relative h-[160dvh]"> 
-      {/* Taller wrapper ensures smooth takeover */}
-      
+    <div ref={ref} className="relative h-[180vh]">
       <motion.div
-        style={{ y }}
-        className={`sticky top-0 h-dvh min-h-dvh flex items-center justify-center px-6 md:px-12 ${bg}`}
+        style={{ y, opacity, scale }}
+        className={
+          "sticky top-0 h-screen flex items-center justify-center " + className
+        }
       >
-        <div className="w-full max-w-6xl mx-auto">
-          {children}
-        </div>
+        {children}
       </motion.div>
     </div>
   );
