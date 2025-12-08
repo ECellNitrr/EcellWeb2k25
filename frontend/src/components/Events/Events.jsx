@@ -3,7 +3,7 @@ import Navbar from '../Navbar'
 import About from '../About' 
 import EventSection from './EventSection';
 import { useState } from 'react';
-import  EventModal  from './EventModal'; 
+import EventModal from './EventModal'; 
 
 const mockEvents = [
     {
@@ -76,12 +76,22 @@ const Events = () => {
     const closeModal = () => setSelectedEvent(null);
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        // Added 'relative' to the container for the absolute positioned blobs to work correctly
+        <div className="min-h-screen bg-ecell-bg relative overflow-hidden">
+            
+            {/* 💡 MODIFICATION: Glowing Background Blobs (Copied from Hero) */}
+            <div className="pointer-events-none absolute inset-0 -z-10">
+                <div className="absolute -top-40 left-10 h-80 w-80 bg-ecell-primary/40 rounded-full blur-3xl" />
+                <div className="absolute top-40 right-0 h-96 w-96 bg-ecell-secondary/30 rounded-full blur-[110px]" />
+                <div className="absolute bottom-16 left-1/2 h-72 w-72 -translate-x-1/2 bg-ecell-accent/20 rounded-full blur-3xl" />
+            </div>
+
             {/* <Navbar /> */}
-            <div className="page-content pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Added relative z-10 to ensure content sits above the background blobs */}
+            <div className="page-content pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 <header className="py-10 text-center">
-                    <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight">
+                    <h1 className="text-5xl font-extrabold text-white tracking-tight">
                         EVENTS
                     </h1>
                 </header>
@@ -98,7 +108,6 @@ const Events = () => {
                         openModal={openModal} 
                     />
                 </main>
-                
                 
             </div>
             <EventModal event={selectedEvent} onClose={closeModal} />
