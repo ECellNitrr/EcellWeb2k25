@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Linkedin, Instagram , Award, Crown, Users} from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
 // --- DUMMY DATA (Expanded for Visualization) ---
 const teamData = {
@@ -66,152 +67,99 @@ const socialItemVariants = {
 
 // --- REUSABLE TEAM CARD COMPONENT (Higher Tier: Glass + Tilt + Glow + Scroll Reveal) ---
 const TeamCard = ({ member, tier }) => {
-    const isHighTier = ['faculty', 'oc', 'head'].includes(tier);
-    const primaryColorClass = tier === 'faculty' ? 'ecell-accent' : 
-                             tier === 'oc' ? 'ecell-vibrant-magenta' : 
-                             'ecell-primary';
+  const ref = useRef(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
-    const cardRef = React.useRef(null);
-    const [tilt, setTilt] = React.useState({ x: 0, y: 0 });
-    const [isHovered, setIsHovered] = React.useState(false);
+  const onMove = (e) => {
+    const rect = ref.current.getBoundingClientRect();
+    const x = (e.clientY - rect.top - rect.height / 2) / 30;
+    const y = (e.clientX - rect.left - rect.width / 2) / 30;
+    setTilt({ x, y });
+  };
 
-    const handleMouseMove = (e) => {
-        if (!cardRef.current) return;
-        const rect = cardRef.current.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+  const onLeave = () => setTilt({ x: 0, y: 0 });
 
-        const tiltX = (centerY - e.clientY) / 10; 
-        const tiltY = (e.clientX - centerX) / 10;
+  const badge =
+    tier === "faculty"
+      ? { icon: Award, text: "Faculty" }
+      : tier === "oc"
+      ? { icon: Crown, text: "OC" }
+      : { icon: Users, text: "Head" };
 
-        setTilt({ x: tiltX, y: tiltY });
-        setIsHovered(true);
-    };
+  const BadgeIcon = badge.icon;
 
-    const handleMouseLeave = () => {
-        setTilt({ x: 0, y: 0 });
-        setIsHovered(false);
-    }
-
-    const dynamicStyle = isHighTier ? {
-        rotateX: tilt.x,
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45 }}
+      animate={{
+        rotateX: -tilt.x,
         rotateY: tilt.y,
-        y: tilt.x !== 0 || tilt.y !== 0 ? -10 : 0, 
-        scale: tilt.x !== 0 || tilt.y !== 0 ? 1.03 : 1, 
-        transition: { type: "spring", stiffness: 150, damping: 12, mass: 0.7 },
-    } : {};
+        scale: tilt.x || tilt.y ? 1.04 : 1,
+      }}
+      style={{ perspective: 1000 }}
+      className="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl"
+    >
+      {/* Animated Gradient Overlay (idle animation) */}
+      <motion.div
+        initial={{ opacity: 0.6 }}
+        animate={{ opacity: [0.6, 0.75, 0.6] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-0 bg-gradient-to-tr from-ecell-mine/20 via-transparent to-purple-500/10"
+      />
 
-    const CardWrapper = isHighTier ? motion.div : 'div';
+      {/* Badge */}
+      <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-ecell-mine text-black text-xs font-semibold flex items-center gap-1">
+        <BadgeIcon className="w-3 h-3" />
+        {badge.text}
+      </div>
 
-    return (
-        <CardWrapper
-            ref={cardRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={isHighTier ? { perspective: 1000 } : {}}
-            animate={isHighTier ? dynamicStyle : {}}
-            
-            // 🛠️ FIX: CONSOLIDATED INITIAL STATE (Removes duplicate 'initial' warning)
-            initial={{ opacity: 0, y: 50, scale: 1, rotateX: 0, rotateY: 0 }} 
-            
-            // 💡 SCROLL REVEAL PROPS: Now correctly applying the "visible" state
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            
-            className={`
-                p-6 rounded-xl text-center shadow-lg transition-all duration-300 relative 
-                ${isHighTier 
-                    ? `group bg-gray-900/50 backdrop-blur-lg border border-white/10 overflow-hidden`
-                    : `bg-gray-800/80 border border-white/10`
-                }
-            `}
-        >
-            {/* Animated Border Glow */}
-            {isHighTier && (
-                <div 
-                    className={`
-                        absolute inset-0 -z-10 rounded-xl transition-all duration-500
-                        ${isHovered ? `scale-[1.05] opacity-50 shadow-[0_0_40px_-5px_var(--color-${primaryColorClass})]` : 'opacity-0'}
-                    `}
-                    style={{ 
-                        background: `radial-gradient(circle at center, var(--color-${primaryColorClass}) 0%, transparent 60%)`,
-                    }}
-                ></div>
+      {/* Image */}
+      <div className="relative h-56 overflow-hidden">
+        <motion.img
+          src={member.img}
+          alt={member.name}
+          className="w-full h-full object-cover"
+          whileHover={{ scale: 1.12 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="relative p-6 text-center z-10">
+        <h3 className="text-xl font-bold text-white">{member.name}</h3>
+        <p className="text-ecell-mine text-sm font-medium">
+          {member.title || member.domain}
+        </p>
+
+        {/* Socials */}
+        {member.socials && (
+          <div className="flex justify-center gap-4 mt-4">
+            {member.socials.linkedin && (
+              <Linkedin className="w-5 h-5 hover:text-ecell-mine cursor-pointer transition" />
             )}
-
-            {/* Image */}
-            {member.img && (
-                <motion.img 
-                    src={member.img} 
-                    alt={member.name} 
-                    whileHover={{ rotate: [0, 5, -5, 0], scale: 1.05 }}
-                    transition={{ duration: 0.4 }}
-                    className={`
-                        w-24 h-24 mx-auto mb-4 object-cover rounded-full relative z-20
-                        border-4 border-${primaryColorClass} shadow-md
-                    `}
-                />
+            {member.socials.instagram && (
+              <Instagram className="w-5 h-5 hover:text-ecell-mine cursor-pointer transition" />
             )}
-            
-            {/* Name and Title/Domain */}
-            <h3 className="text-xl font-extrabold text-white relative z-20">{member.name}</h3>
-            <p className={`text-sm font-medium mb-3 text-${primaryColorClass} relative z-20`}>
-                {member.title || member.domain}
-            </p>
-
-            {/* Social Media Links */}
-            {member.socials && (
-                <motion.div
-                    className="flex justify-center gap-4 text-gray-400 mt-4 relative z-20"
-                    variants={socialContainerVariants}
-                    initial="hidden"
-                    animate={isHovered && isHighTier ? "visible" : "hidden"}
-                >
-                    {member.socials.linkedin && (
-                        <motion.a 
-                            href={member.socials.linkedin} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            aria-label="LinkedIn"
-                            variants={socialItemVariants}
-                        >
-                            <Linkedin className="w-6 h-6 hover:text-ecell-vibrant-magenta transition cursor-pointer" />
-                        </motion.a>
-                    )}
-                    {member.socials.instagram && (
-                        <motion.a 
-                            href={member.socials.instagram} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            aria-label="Instagram"
-                            variants={socialItemVariants}
-                        >
-                            <Instagram className="w-6 h-6 hover:text-ecell-vibrant-magenta transition cursor-pointer" />
-                        </motion.a>
-                    )}
-                    {member.socials.mail && (
-                        <motion.a 
-                            href={`mailto:${member.socials.mail}`} 
-                            aria-label="Email"
-                            variants={socialItemVariants}
-                        >
-                            <Mail className="w-6 h-6 hover:text-ecell-vibrant-magenta transition cursor-pointer" />
-                        </motion.a>
-                    )}
-                </motion.div>
+            {member.socials.mail && (
+              <Mail className="w-5 h-5 hover:text-ecell-mine cursor-pointer transition" />
             )}
+          </div>
+        )}
+      </div>
 
-            {/* Placeholder for low-tier cards if no socials are present */}
-            {member.socials && !isHighTier && (
-                <div className="flex justify-center gap-3 text-gray-400 mt-3">
-                    {member.socials.linkedin && (<a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin className="w-5 h-5 hover:text-ecell-vibrant-magenta transition" /></a>)}
-                    {member.socials.instagram && (<a href={member.socials.instagram} target="_blank" rel="noopener noreferrer"><Instagram className="w-5 h-5 hover:text-ecell-vibrant-magenta transition" /></a>)}
-                    {member.socials.mail && (<a href={`mailto:${member.socials.mail}`}><Mail className="w-5 h-5 hover:text-ecell-vibrant-magenta transition" /></a>)}
-                </div>
-            )}
-        </CardWrapper>
-    );
+      {/* Bottom Glow */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-ecell-mine to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+    </motion.div>
+  );
 };
+
 
 // --- SECTION HEADER (Scroll Reveal Added) ---
 const SectionHeader = ({ title }) => (
@@ -411,3 +359,4 @@ const Teams = () => {
 }
 
 export default Teams;
+

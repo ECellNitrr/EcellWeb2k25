@@ -230,7 +230,7 @@ export default function HomeEvent() {
   /** ⭐ LOCAL SCROLL PARALLAX  */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start center", "center start"], // FIX: Section fully bright when entering
+    offset: ["start center", "end center"], // FIX: Section fully bright when entering
   });
 
   // Entire section fade + lift on leaving

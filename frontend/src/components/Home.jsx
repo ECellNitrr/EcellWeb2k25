@@ -273,6 +273,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import HomeAbout from "./HomeAbout";
 import HomeGallery from "./HomeGallery";
 import ScrollSection from "./ScrollSection";
+import PastSpeakers from "./PastSpeaker";
 // import AboutSliding from "./AboutSliding";
 
 export default function Hero() {
@@ -388,6 +389,7 @@ export default function Hero() {
     {/* </ScrollSection> */}
     {/* <AboutSliding/> */}
     <HomeEvent />
+    <PastSpeakers/>
     <HomeGallery />
     </div>
   );

@@ -178,7 +178,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Target, Eye, Award, TrendingUp } from "lucide-react";
+import { Target, Eye, Award, TrendingUp ,ArrowUpRight } from "lucide-react";
 
 const features = [
   {
@@ -215,7 +215,7 @@ export default function HomeAbout() {
   // ⭐ LOCAL SCROLL PARALLAX FIXED OFFSETS
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start center", "center start"], 
+    offset: ["start center", "end center"], 
   });
 
   // Fade only when the section is LEAVING
@@ -281,11 +281,15 @@ export default function HomeAbout() {
         <span
           className={`
             inline-block text-ecell-primary uppercase tracking-wider text-sm font-semibold mb-4
-            transition-all duration-700
+            transition-all duration-700 flex
             ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
           `}
         >
-          About Us
+          {/* <div> */}
+
+            About Us
+          {/* </div> */}
+          
         </span>
 
         {/* Main Heading */}
@@ -366,7 +370,20 @@ export default function HomeAbout() {
             );
           })}
         </motion.div>
+
+        <button
+            className={`
+              px-5 py-3 border rounded-xl font-medium flex items-center gap-2
+              border-ecell-primary text-ecell-primary m-auto mt-25
+              hover:bg-ecell-primary hover:text-white transition-all duration-700 delay-200
+              ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}
+            `}
+          >
+            View All Events <ArrowUpRight className="w-4 h-4" />
+          </button>
+        
       </motion.div>
+      
     </section>
   );
 }
