@@ -56,14 +56,16 @@ export default function HomeGallery() {
       className="relative py-28 bg-ecell-bg overflow-hidden"
     >
       {/* Sparkle Line */}
-      <div
-        className={`
-          h-[2px] w-full mb-14 
-          bg-linear-to-r from-transparent via-ecell-mine to-transparent 
-          transition-all duration-500
-          ${visible ? "opacity-100 scale-100" : "opacity-0 scale-50"}
-        `}
-      />
+      <div className="sticky top-16 z-20">
+  <div
+    className={`
+      h-[2px] w-full
+      bg-linear-to-r from-transparent via-ecell-mine to-transparent
+      transition-all duration-500
+      ${visible ? "opacity-100 scale-100" : "opacity-0 scale-50"}
+    `}
+  />
+</div>
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
@@ -88,15 +90,14 @@ export default function HomeGallery() {
             onMouseMove={(e) => handleTilt(e, 0)}
             onMouseLeave={() => resetTilt(0)}
             className={`
-              rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-xl
-              transition-all duration-100
+    rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-xl
+    transition-all duration-300
 
-              /* INITIAL STATE */
-              opacity-0 -translate-x-10
+    opacity-0 translate-y-8
+    md:translate-y-0 md:-translate-x-10
 
-              /* FINAL STATE */
-              ${visible ? "opacity-100 translate-x-0" : ""}
-            `}
+    ${visible ? "opacity-100 translate-y-0 md:translate-x-0" : ""}
+  `}
           >
             <img src={images[0]} className="w-full h-64 object-cover" />
           </div>
@@ -107,12 +108,12 @@ export default function HomeGallery() {
             onMouseMove={(e) => handleTilt(e, 1)}
             onMouseLeave={() => resetTilt(1)}
             className={`
-              rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-xl
-              transition-all duration-100
+    rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-xl
+    transition-all duration-300
 
-              opacity-0 translate-y-10
-              ${visible ? "opacity-100 translate-y-0" : ""}
-            `}
+    opacity-0 translate-y-8
+    ${visible ? "opacity-100 translate-y-0" : ""}
+  `}
           >
             <img src={images[1]} className="w-full h-64 object-cover" />
           </div>
@@ -123,12 +124,14 @@ export default function HomeGallery() {
             onMouseMove={(e) => handleTilt(e, 2)}
             onMouseLeave={() => resetTilt(2)}
             className={`
-              rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-xl
-              transition-all duration-100
+    rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-xl
+    transition-all duration-300
 
-              opacity-0 translate-x-10
-              ${visible ? "opacity-100 translate-x-0" : ""}
-            `}
+    opacity-0 translate-y-8
+    md:translate-y-0 md:translate-x-10
+
+    ${visible ? "opacity-100 translate-y-0 md:translate-x-0" : ""}
+  `}
           >
             <img src={images[2]} className="w-full h-64 object-cover" />
           </div>
@@ -140,12 +143,13 @@ export default function HomeGallery() {
           onMouseMove={(e) => handleTilt(e, 3)}
           onMouseLeave={() => resetTilt(3)}
           className={`
-            mt-6 rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-xl
-            transition-all duration-100
+    mt-6 rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-xl
+    transition-all duration-300
 
-            opacity-0 translate-y-10
-            ${visible ? "opacity-100 translate-y-0" : ""}
-          `}
+    opacity-0 translate-y-8
+    ${visible ? "opacity-100 translate-y-0" : ""}
+  `}
+
         >
           <img src={images[3]} className="w-full h-72 object-cover" />
         </div>
