@@ -9,6 +9,7 @@ import {
   Youtube,
 } from "lucide-react";
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -19,11 +20,11 @@ export default function Footer() {
       {/* Top glowing line */}
       <div className="h-px bg-linear-to-r from-transparent via-ecell-mine to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-6xl mx-auto px-6 py-14 md:py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 xl:gap-16 2xl:gap-20">
           {/* BRAND */}
           <div className="lg:col-span-1">
-            <a href="#home" className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-ecell-primary/20 border border-ecell-primary/50 flex items-center justify-center">
                 {/* <Rocket className="w-5 h-5 text-ecell-primary" /> */}
                 <Logo className="w-5 h-5 text-ecell-primary" />
@@ -31,7 +32,7 @@ export default function Footer() {
               <span className="text-xl font-bold">
                 E-Cell <span className="text-ecell-primary">NITRR</span>
               </span>
-            </a>
+            </div>
 
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Fostering entrepreneurship and innovation at NIT Raipur. Building
@@ -41,14 +42,15 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex items-center gap-3">
               {[
-                { icon: Instagram, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: Youtube, href: "#" },
+                { icon: Instagram, href: "https://www.instagram.com/ecell_nitraipur_/" },
+                { icon: Linkedin, href: "https://www.linkedin.com/company/entrepreneurship-cell-nit-raipur/posts/?feedView=all" },
+                { icon: Twitter, href: "https://x.com/Ecell_NITRR" },
+                { icon: Youtube, href: "https://www.youtube.com/@entrepreneurshipcellnitrai3198" },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
                   href={href}
+                  target="_blank"
                   className="
                     w-10 h-10 rounded-full bg-white/10 border border-white/10
                     flex items-center justify-center text-gray-300
@@ -66,21 +68,27 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {["About Us", "Events", "Team", "Blog", "Gallery"].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+              {[
+                {name:"Home" ,  to: "/" },
+                {name:"About Us" ,  to: "/about" },
+                {name:"Events" ,  to: "/events" },
+                {name:"Team" , to: "/team" },
+                {name:"Gallery" , to: "/gallery" },
+              ].map((link,index) => (
+                <li key={index}>
+                  <Link
+                    to={link.to}
                     className="text-gray-400 hover:text-ecell-primary transition-colors text-sm"
                   >
-                    {link }
-                  </a>
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* RESOURCES */}
-          <div>
+          {/* <div>
             <h4 className="font-bold text-lg mb-6">Resources</h4>
             <ul className="space-y-3">
               {[
@@ -100,7 +108,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* CONTACT */}
           <div>
@@ -142,14 +150,14 @@ export default function Footer() {
             © {new Date().getFullYear()} E-Cell NIT Raipur. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-gray-400">
+          {/* <div className="flex items-center gap-6 text-sm text-gray-400">
             <a href="#" className="hover:text-ecell-primary transition-colors">
               Privacy Policy
             </a>
             <a href="#" className="hover:text-ecell-primary transition-colors">
               Terms of Service
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

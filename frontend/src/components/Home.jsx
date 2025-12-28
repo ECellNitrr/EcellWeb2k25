@@ -361,7 +361,7 @@ export default function Hero() {
           transition={{ delay: 0.45, duration: 0.6 }}
           className="mt-8 flex justify-center gap-4"
         >
-          <button
+          {/* <button
             className="
               px-6 py-3 rounded-xl font-medium
               bg-ecell-primary text-white
@@ -371,7 +371,7 @@ export default function Hero() {
             "
           >
             <Link to="/about">Get Started</Link> <ArrowRight size={18} />
-          </button>
+          </button> */}
 
           <button
             className="
@@ -379,7 +379,7 @@ export default function Hero() {
               text-gray-200 hover:bg-white/10 transition
             "
           >
-            <Link to="/event">Explore Events</Link>
+            <Link to="/events">Explore Events</Link>
             
           </button>
         </motion.div>
