@@ -72,7 +72,7 @@ export default function Footer() {
                     href="#"
                     className="text-gray-400 hover:text-ecell-primary transition-colors text-sm"
                   >
-                    {link}
+                    {link }
                   </a>
                 </li>
               ))}
