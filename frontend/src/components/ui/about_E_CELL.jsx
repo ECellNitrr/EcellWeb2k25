@@ -1,5 +1,4 @@
-import React from 'react';
-import './about_E_CELL.css'; // Import the CSS file for animations
+import './about_E_CELL.css';
 
 const About_E_CELL = () => {
   return (
