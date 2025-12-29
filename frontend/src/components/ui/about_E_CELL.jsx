@@ -1,5 +1,5 @@
 import './about_E_CELL.css';
-import ecellLogo from './assets/ecell-logo.png';
+import ecellLogo from '../../assets/ecell-logo.png';
 
 const About_E_CELL = () => {
   return (
