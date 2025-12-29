@@ -90,10 +90,10 @@ export default function Navbar() {
         {/* LOGO */}
         <div className="flex items-center gap-3">
           <div className="
-            h-10 w-10 rounded-xl 
+             rounded-xl 
             flex items-center justify-center
             
-            shadow-[0_0_20px_rgba(99,102,241,0.5)]
+            
           ">
             {/* <Rocket className="h-5 w-5 text-white" /> */}
             <div className="p-[3px] ">

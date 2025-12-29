@@ -4,7 +4,7 @@ import EventModal from './EventModal';
 import { AnimatePresence } from 'framer-motion';
 
 // 🚀 IMPORT DATA FROM JSON
-import eventData from './eventsdata.json'; 
+import eventData from '../../assets/Data/eventsdata.json'; 
 
 const Events = () => {
     // Filter events from the imported JSON
