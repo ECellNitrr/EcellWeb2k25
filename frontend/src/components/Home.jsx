@@ -275,6 +275,7 @@ import HomeGallery from "./HomeGallery";
 import ScrollSection from "./ScrollSection";
 import PastSpeakers from "./PastSpeaker";
 import Gallery from "./Gallery";
+import HomeSponsors from "./HomeSponsors";
 // import AboutSliding from "./AboutSliding";
 
 export default function Hero() {
@@ -385,12 +386,14 @@ export default function Hero() {
     </section>
     {/* </ScrollSection> */}
     {/* ScrollSection className="bg-white text-black"> */}
+    
 
     <HomeAbout  />
     {/* </ScrollSection> */}
     {/* <AboutSliding/> */}
     <HomeEvent />
     <PastSpeakers/>
+    <HomeSponsors/>
     <HomeGallery />
    
     </div>
