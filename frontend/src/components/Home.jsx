@@ -397,12 +397,12 @@ export default function Hero() {
     {/* </ScrollSection> */}
     {/* ScrollSection className="bg-white text-black"> */}
 
-    <HomeAbout  />
+    {/* <HomeAbout  /> */}
     {/* </ScrollSection> */}
     {/* <AboutSliding/> */}
-    <HomeEvent />
-    <PastSpeakers/>
-    <HomeGallery />
+    {/* <HomeEvent /> */}
+    {/* <PastSpeakers/> */}
+    {/* <HomeGallery /> */}
     {/* 🧩 3. REMAINING SECTIONS */}
       <div className="relative z-10 bg-ecell-bg">
         <HomeAbout />
