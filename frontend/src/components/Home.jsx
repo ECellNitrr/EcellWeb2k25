@@ -276,7 +276,9 @@ import HomeEvent from "../HomeEvent";
 import HomeAbout from "./HomeAbout";
 import HomeGallery from "./HomeGallery";
 import PastSpeakers from "./PastSpeaker";
+import Gallery from "./Gallery";
 import HomeSponsors from "./HomeSponsors";
+// import AboutSliding from "./AboutSliding";
 
 export default function Hero() {
   const ref = useRef(null);
