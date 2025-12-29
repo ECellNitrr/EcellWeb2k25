@@ -74,9 +74,9 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     { name: "Events", href: "/events" },
     { name: "Gallery", href: "/gallery" },
+    { name: "Sponsors", href: "/spons"},
     { name: "Team", href: "/team" },
-    { name: "Contact", href: "/contact" },
-
+    { name: "Contact", href: "/contact" }
   ];
 
   return (
