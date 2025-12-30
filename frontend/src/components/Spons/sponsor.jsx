@@ -27,12 +27,35 @@ const LogoItem = ({ sponsor }) => (
     }}
   >
     <img
-      src={sponsor.logo}   // Cloudinary URL from your JSON
+      src={sponsor.logo}  
       alt={sponsor.name}
       className="max-h-16 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity"
     />
   </motion.a>
 );
+
+
+const BrochureButton = () => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className="flex justify-center mb-12"
+  >
+    <a
+      href="../../../public/sponsorship-brochure.pdf"  
+      download="ecell-brochure.pdf"
+      className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-ecell-primary to-ecell-mine text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-white/20 backdrop-blur-sm"
+    >
+      <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10l-5.5 5.5m0 0L12 21l5.5-5.5m-5.5 5.5V7a1 1 0 012 0v10.5" />
+      </svg>
+      Download E-Cell Brochure
+    </a>
+  </motion.div>
+);
+
 
 const Sponsors = () => {
   const logos = sponsorsData.sponsors || [];
@@ -55,8 +78,8 @@ const Sponsors = () => {
           SPONSORS
         </motion.h1>
 
-        <SectionHeader title="Our Sponsors" />
-
+        <SectionHeader title="Past Sponsors" />
+        <BrochureButton />
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
             {logos.map((s, i) => (
