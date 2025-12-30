@@ -20,7 +20,7 @@ export default function PastSpeakers() {
     {
       name: "Dr. Gajendra Purohit",
       role: "Founder @MathsCare,Mathematics Educator",
-      image: "https://res.cloudinary.com/daoth3ia9/image/upload/v1766851697/gp_c3opaq.jpg",
+      image: "https://res.cloudinary.com/daoth3ia9/image/upload/v1767098238/gpsir_kmtr4z.jpg",
       // quote: "Build first, perfect later. Momentum beats perfection.",
     },
     {
@@ -32,7 +32,7 @@ export default function PastSpeakers() {
     {
       name: "Sandeep Jain",
       role: "Founder of Coding Platform:GeeksforGeeks",
-      image: "https://res.cloudinary.com/daoth3ia9/image/upload/v1766851696/sandeepjain_h6oftr.jpg",
+      image: "https://res.cloudinary.com/daoth3ia9/image/upload/v1767098026/sandeep_jain_mdxnaq.jpg",
       // quote: "Consistency compounds more than talent.",
     },
   ];
