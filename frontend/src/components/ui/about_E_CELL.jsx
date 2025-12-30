@@ -1,5 +1,7 @@
 import './about_E_CELL.css';
-import ecellLogo from '../../assets/ecell-logo.png';
+import ecellLogo from '../../assets/about_us_image/white_ecell_image.png';
+import team_img from '../../assets/ecell-team.jpeg';
+import timeline_img from '../../assets/about_us_image/about_us_timeline.png';
 
 const About_E_CELL = () => {
   return (
@@ -306,7 +308,7 @@ const About_E_CELL = () => {
               <div className="image-glow"></div>
               <div className="image-wrapper">
                 <img
-                  src="./assets/ecell-team.jpeg"
+                  src={team_img}
                   alt="E-Cell Team NIT Raipur"
                   className="team-image"
                 />
@@ -674,6 +676,19 @@ const About_E_CELL = () => {
               <div className="end-marker">
                 <span className="end-icon">✨</span>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Timeline with Team Image Section */}
+        <div className="timeline-image-section">
+          <div className="timeline-image-container">
+            <div className="timeline-image-box">
+              <img
+                src={timeline_img}
+                alt="E-Cell Timeline"
+                className="timeline-team-image"
+              />
             </div>
           </div>
         </div>
