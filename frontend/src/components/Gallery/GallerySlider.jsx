@@ -1,7 +1,4 @@
 
-
-
-
 import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,24 +7,17 @@ import './GallerySlider.css'; // Custom CSS for styling
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
+import gallery_img from '../../assets/Data/gallerydata.json';
+
 
 // ******************************************************
 // CHANGE 1: Import the Autoplay module
 // ******************************************************
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
-// --- Placeholder Image Data ---
-const flowerImages = [
-  { id: 1, url: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt: 'A colorful bouquet' },
-  { id: 2, url: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fHww', alt: 'Red rose' },
-  { id: 3, url: 'https://images.unsplash.com/photo-1429087969512-1e85aab2683d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJhbmRvbXxlbnwwfHwwfHx8MA%3D%3D', alt: 'Lavender' },
-  { id: 4, url: 'https://images.unsplash.com/photo-1605677725437-74dafaa1272d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D', alt: 'Dark pink flower' },
-  { id: 5, url:  'https://images.unsplash.com/photo-1584025027548-f08b71022a49?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI2fHx8ZW58MHx8fHx8', alt: 'Another red rose' },
-  { id: 6, url: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt: 'Yellow tulips' },
-  { id: 7, url: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fHww', alt: 'White daisies' },
-];
 
-export default function GallerySlider({ images = flowerImages }) {
+
+export default function GallerySlider({ images = gallery_img.sliderImg }) {
   return (
     <div className="flower-gallery-container* *relative** bg-white/10 backdrop-blur-md p-6 rounded-xl
     /* --- GLOW EFFECT STARTS HERE --- */
@@ -39,8 +29,6 @@ export default function GallerySlider({ images = flowerImages }) {
       shadow-[0_0_20px_0_rgba(99,102,241,0.5)] 
       
       /* 3. Outer Bleed/Border Glow (Vibrant Cyan) */
-      
-     
       
       /* 4. Remove custom glowing-border class */
       /* Note: We no longer need the 'glowing-border' class */ ">
