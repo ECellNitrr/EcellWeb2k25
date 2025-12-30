@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import imglogo from '../assets/1680846048521_20240527_172555_0000.png';
+import imglogo from '../assets/logo-white.png';
 
 const Logo = () => {
   return (
@@ -9,9 +9,7 @@ const Logo = () => {
         <div
           className="
              rounded-xl flex items-center justify-center
-            bg-[rgb(234,234,234)]            /* soft purple backing */
-            backdrop-blur-sm
-             /* ambient purple glow */
+                       
           "
         >
           <img

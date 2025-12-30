@@ -299,7 +299,7 @@ export default function HomeEvent() {
               ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}
             `}
           >
-            <Link to="/event">View All Events</Link> <ArrowUpRight className="w-4 h-4" />
+            <Link to="/events">View All Events</Link> <ArrowUpRight className="w-4 h-4" />
           </button>
         </div>
 
@@ -368,7 +368,7 @@ export default function HomeEvent() {
               </div>
 
               {/* Hover Icon */}
-              <div
+              {/* <div
                 className={`
                   absolute top-6 right-6 w-10 h-10 rounded-full bg-ecell-primary/10 
                   flex items-center justify-center transition-all duration-300
@@ -376,7 +376,7 @@ export default function HomeEvent() {
                 `}
               >
                 <ArrowUpRight className="w-5 h-5 text-ecell-primary" />
-              </div>
+              </div> */}
             </div>
           ))}
         </motion.div>

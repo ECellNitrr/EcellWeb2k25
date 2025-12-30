@@ -363,24 +363,47 @@ export default function Hero() {
             Fostering the spirit of entrepreneurship at NIT Raipur. We help you turn your vision into a scalable venture.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-12 flex flex-col sm:flex-row justify-center gap-6"
+        {/* 🚀 Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.6 }}
+          className="mt-8 flex justify-center gap-4"
+        >
+          {/* <button
+            className="
+              px-6 py-3 rounded-xl font-medium
+              bg-ecell-primary text-white
+              shadow-ecell-glow 
+              hover:opacity-90 transition
+              flex items-center gap-2
+            "
           >
-            <Link to="/about" className="group px-10 py-4 rounded-full font-bold bg-ecell-primary text-white shadow-[0_0_20px_rgba(var(--color-primary),0.4)] hover:scale-105 transition-all flex items-center justify-center gap-2">
-              Get Started <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <Link to="/about">Get Started</Link> <ArrowRight size={18} />
+          </button> */}
 
-            <Link to="/event" className="px-10 py-4 rounded-full font-bold border border-white/40 text-white backdrop-blur-md hover:bg-white/10 transition-all text-center">
-              Explore Events
-            </Link>
-          </motion.div>
+          <button
+            className="
+              px-6 py-3 rounded-xl font-medium border border-white/20
+              text-gray-200 hover:bg-white/10 transition
+            "
+          >
+            <Link to="/events">Explore Events</Link>
+            
+          </button>
         </motion.div>
-      </section>
+      </motion.div>
+    </section>
+    {/* </ScrollSection> */}
+    {/* ScrollSection className="bg-white text-black"> */}
 
-      {/* 🧩 3. REMAINING SECTIONS */}
+    {/* <HomeAbout  /> */}
+    {/* </ScrollSection> */}
+    {/* <AboutSliding/> */}
+    {/* <HomeEvent /> */}
+    {/* <PastSpeakers/> */}
+    {/* <HomeGallery /> */}
+    {/* 🧩 3. REMAINING SECTIONS */}
       <div className="relative z-10 bg-ecell-bg">
         <HomeAbout />
         <HomeEvent />
@@ -389,6 +412,8 @@ export default function Hero() {
         <HomeGallery />
       </div>
     </div>
+   
+    // </div>
   );
 }
 
