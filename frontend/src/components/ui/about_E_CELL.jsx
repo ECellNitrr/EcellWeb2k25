@@ -1,5 +1,7 @@
 import './about_E_CELL.css';
-import ecellLogo from '../../assets/ecell-logo.png';
+import { Link } from 'react-router-dom';
+import ecellLogo from '../../assets/about_us_image/white_ecell_image.png';
+import team_img from '../../assets/ecell-team.jpeg';
 
 const About_E_CELL = () => {
   return (
@@ -91,9 +93,9 @@ const About_E_CELL = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </a>
-                <a href="#events" className="hero-btn hero-btn-secondary">
+                <Link to="/events" className="hero-btn hero-btn-secondary">
                   <span>Our Events</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -306,7 +308,7 @@ const About_E_CELL = () => {
               <div className="image-glow"></div>
               <div className="image-wrapper">
                 <img
-                  src="./assets/ecell-team.jpeg"
+                  src={team_img}
                   alt="E-Cell Team NIT Raipur"
                   className="team-image"
                 />
@@ -686,10 +688,6 @@ const About_E_CELL = () => {
           <p className="cta-text">
             Be part of NIT Raipur's thriving startup ecosystem. Transform your ideas into reality with our support, mentorship, and resources.
           </p>
-          <div className="cta-buttons">
-            <button className="btn btn-primary">GET INVOLVED</button>
-            <button className="btn btn-secondary">LEARN MORE</button>
-          </div>
         </div>
       </div>
     </section>
