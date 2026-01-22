@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ecell.nitrr.ac.in/sitemap.xml
