@@ -23,10 +23,10 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-14 md:py-16">
 
         {/* 🌟 MAIN FLEX CONTAINER (REPLACES GRID) */}
-        <div className="flex flex-col lg:flex-row flex-wrap justify-around items-center  text-center">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-16 text-center lg:text-left">
 
           {/* BRAND */}
-          <div className="flex flex-col items-center max-w-xs">
+          <div className="flex flex-col items-center lg:items-start max-w-xs">
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg  flex items-center justify-center">
                 <Logo className="w-5 h-5 text-ecell-primary" />
@@ -41,7 +41,7 @@ export default function Footer() {
               Building the next generation of changemakers.
             </p>
 
-            <div className="flex justify-center items-center gap-3">
+            <div className="flex justify-center lg:justify-start items-center gap-3">
               {[Instagram, Linkedin, Twitter, Youtube].map((Icon, i) => {
                 const links = [
                   "https://www.instagram.com/ecell_nitraipur_/",
@@ -64,8 +64,9 @@ export default function Footer() {
           </div>
 
           {/* QUICK LINKS */}
-          <div className="flex flex-col items-center">
-            <h4 className="font-bold text-lg mb-6">Quick Links</h4>
+          <div className="flex flex-col items-center lg:items-start">
+            <h4 className="font-bold text-xl mb-6">
+              Quick Links</h4>
             <ul className="space-y-3">
               {[
                 { name: "Home", to: "/" },
@@ -77,7 +78,8 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     to={link.to}
-                    className="text-gray-400 hover:text-ecell-primary transition-colors text-sm"
+                    className="text-gray-400 hover:text-ecell-primary transition-colors text-base"
+
                   >
                     {link.name}
                   </Link>
@@ -87,35 +89,109 @@ export default function Footer() {
           </div>
 
           {/* CONTACT SECTION */}
-          <div className="flex flex-col items-center max-w-xs">
-            <h4 className="font-bold text-lg mb-6">Contact Us</h4>
-            <ul className="space-y-4 text-sm">
-              <li className="flex justify-center items-center gap-3">
-                <MapPin className="w-5 h-5 text-ecell-primary" />
-                <span className="text-gray-400">
-                  NIT Raipur, G.E. Road, Raipur, Chhattisgarh - 492010
-                </span>
-              </li>
-              <li className="flex justify-center items-center gap-3">
-                <Mail className="w-5 h-5 text-ecell-primary" />
-                <a
-                  href="mailto:ecell@nitrr.ac.in"
-                  className="text-gray-400 hover:text-ecell-primary"
-                >
-                  ecell@nitrr.ac.in
-                </a>
-              </li>
-              <li className="flex justify-center items-center gap-3">
-                <Phone className="w-5 h-5 text-ecell-primary" />
-                <a
-                  href="tel:+919876543210"
-                  className="text-gray-400 hover:text-ecell-primary"
-                >
-                  +91 98765 43210
-                </a>
-              </li>
-            </ul>
+          <div className="flex flex-col max-w-md text-left">
+            <h4 className="font-bold text-xl mb-8">Contact</h4>
+
+            {/* WEBSITE QUERIES */}
+            <div className="mb-6">
+              <p className="text-base font-semibold text-gray-200 mb-4">
+                For website queries
+              </p>
+
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 62683 26237 (Ayush Shukla)
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 70113 14730 (Tanmay Srivastava)
+                  </span>
+                </li>
+
+                {/* <li className="flex items-center gap-3">
+        <Mail className="w-4 h-4 text-ecell-primary" />
+        <a
+          href="mailto:webops_ecell@smail.iitm.ac.in"
+          className="text-gray-400 hover:text-ecell-primary"
+        >
+          webops_ecell@smail.iitm.ac.in
+        </a>
+      </li> */}
+              </ul>
+            </div>
+
+            {/* OTHER UPDATES */}
+            <div className="mb-6">
+              <p className="text-base font-semibold text-gray-200 mb-4">
+                For other updates
+              </p>
+
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 90397 51295 (Shashank Sharma)
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 80519 96225 (Abhishek Jha)
+                  </span>
+                </li>
+
+                {/* <li className="flex items-center gap-3">
+                    <Mail className="w-4 h-4 text-ecell-primary" />
+                    <a
+                      href="mailto:sr_ecell@smail.iitm.ac.in"
+                      className="text-gray-400 hover:text-ecell-primary"
+                    >
+                      ecell@smail.iitm.ac.in
+                    </a>
+                  </li> */}
+              </ul>
+            </div>
+
+            {/* SPONSORSHIP QUERIES */}
+            <div>
+              <p className="text-base font-semibold text-gray-200 mb-4">
+                For Sponsorship queries
+              </p>
+
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 77658 93770 (Priyanshu Kumar)
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 93996 33428 (Shristi Sahu)
+                  </span>
+                </li>
+
+                {/* <li className="flex items-center gap-3">
+        <Mail className="w-4 h-4 text-ecell-primary" />
+        <a
+          href="mailto:corporate_ecell@smail.iitm.ac.in"
+          className="text-gray-400 hover:text-ecell-primary"
+        >
+          corporate_ecell@smail.iitm.ac.in
+        </a>
+      </li> */}
+              </ul>
+            </div>
           </div>
+
 
         </div>
 
