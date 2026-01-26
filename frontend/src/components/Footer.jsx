@@ -168,14 +168,14 @@ export default function Footer() {
                 <li className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-ecell-primary" />
                   <span className="text-gray-400">
-                    +91 77658 93770 (Priyanshu Kumar)
+                    +91 63975 19309 (Ritik Pathak)
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-ecell-primary" />
                   <span className="text-gray-400">
-                    +91 93996 33428 (Shristi Sahu)
+                    +91 91749 78791 (Ayush Bhardwaj)
                   </span>
                 </li>
 
