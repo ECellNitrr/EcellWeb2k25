@@ -1,17 +1,10 @@
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import HomeSponsorBtn from "./HomeSponsorBtn";
-const sponsors = [
-  { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-  { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-  { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-  { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-  { name: "Zomato", logo: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Zomato_Logo.svg" },
-  { name: "Paytm", logo: "https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" },
-];
+import sponsors from "../assets/Data/spons.json";
 
 export default function HomeSponsors() {
-  const duplicatedSponsors = [...sponsors, ...sponsors];
+  const duplicatedSponsors = [...sponsors.sponsors, ...sponsors.sponsors];
   const containerRef = useRef(null);
   
   // Parallax Scroll Logic
@@ -88,7 +81,7 @@ export default function HomeSponsors() {
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               ease: "linear",
-              duration: 25,
+              duration: 50,
               repeat: Infinity,
             }}
           >

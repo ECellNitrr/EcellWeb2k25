@@ -1,0 +1,58 @@
+{
+
+"sliderImg": [
+  { "id": 1, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1766851697/anubhavdubey_gnevsx.jpg", "alt": "slider pic"  },
+  { "id": 2, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767011693/Copy_of__SAV5127_ax7ujp.jpg", "alt": "slider pic" },
+  { "id": 3, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767012912/Copy_of_TGR02340_hxusne.jpg", "alt": "slider pic" },
+  { "id": 4, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767013528/Copy_of__SAV5485_cdbfqo.jpg", "alt": "slider pic" },
+  { "id": 5, "url":  "https://res.cloudinary.com/daoth3ia9/image/upload/v1767013909/Copy_of_TGR02039_e1i8fy.jpg", "alt": "slider pic" },
+  { "id": 6, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767014249/Copy_of_IMG_5790_1_xn4w2r.jpg", "alt": "slider pic"},
+  { "id": 7, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767014497/Copy_of_IMG_0427_umb8mp.jpg", "alt": "slider pic" }
+],
+
+"mainSection": [
+    { "large": "https://res.cloudinary.com/daoth3ia9/image/upload/v1766853080/freecompress-Copy_of_TGR02030_m2no1y.jpg",
+    "title": "E-Summit 2024", "description": "Annual entrepreneurship summit", "featured": true
+    },
+
+    { "topRight": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767003657/Copy_of_IMG_0380_yncr8w.jpg",
+      "title": "Startup Expo", "description": "Spirit of young entrepreneurs", "featured": false
+    },
+
+    { "bottomLeft": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767004872/Copy_of_IMG_6071_yk8ttp.jpg",
+      "title": "Speaker Session", "description": "meet industry leaders", "featured": false
+    },
+
+    { "bottomMiddle": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767005926/Copy_of__SAV5438_icqkvf.jpg",
+      "title": "Shark Tank", "description": "Pitch your ideas to investors", "featured": false
+    },
+    { "bottomRight": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767014711/Copy_of_IMG_5709-10_jx5pot.jpg",
+      "title": "Networking Event", "description": "Connect with fellow entrepreneurs", "featured": false
+    }
+],
+"other_EsummitImg":[
+     { "id":1, "url":"https://res.cloudinary.com/daoth3ia9/image/upload/v1767053873/Copy_of_IMG_5671-3_wmus51.jpg", "alt":"Esummit Image 1", "desc":"Debojit Sen"},
+     { "id":2, "url":"https://res.cloudinary.com/daoth3ia9/image/upload/v1767054422/Copy_of_NIK_0072_1_wlkqbv.jpg", "alt":"Esummit Image 2", "desc":"B-Case Study"},
+     { "id":3, "url":"https://res.cloudinary.com/daoth3ia9/image/upload/v1767054828/Copy_of_IMG_5618-8_gifz02.jpg", "alt":"Esummit Image 3", "desc":"B-Model"},
+     { "id":4, "url":"https://res.cloudinary.com/daoth3ia9/image/upload/v1767055016/Copy_of_IMG_5764_lkxmob.jpg", "alt":"Esummit Image 4", "desc":"CricknoMetrica"},
+     { "id":5, "url":"https://res.cloudinary.com/daoth3ia9/image/upload/v1767055245/Copy_of_TGR02264_skaenr.jpg", "alt":"Esummit Image 5", "desc":"E-MUN"},
+     { "id":6, "url":"https://res.cloudinary.com/daoth3ia9/image/upload/v1767055374/Copy_of__SAV5476_b12bds.jpg", "alt":"Esummit Image 6", "desc":"Shark-Tank"}
+],
+"SPEAKER_SESSION_IMAGES":[
+  { "id": 1, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767004872/Copy_of_IMG_6071_yk8ttp.jpg", "alt": "Speaker Session 1", "desc":"Anubhav Dubay" },
+  { "id": 2, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767010135/Copy_of__SAV5051_ej8l38.jpg", "alt": "Speaker Session 2", "desc":"Gajendra purohit" },
+  { "id": 3, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767004872/Copy_of_IMG_6071_yk8ttp.jpg", "alt": "Speaker Session 3" , "desc":"Anubhav Dubay"}
+
+],
+"OTHER_IMAGES":
+[
+  { "id": 1, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767005926/Copy_of__SAV5438_icqkvf.jpg", "alt": "Glimpse 1", "desc":"Workshop session" },
+  { "id": 2, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767005926/Copy_of__SAV5438_icqkvf.jpg", "alt": "Glimpse 2", "desc":"Bootcamp activity" },
+  { "id": 3, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767005926/Copy_of__SAV5438_icqkvf.jpg", "alt": "Glimpse 3", "desc":"Panel discussion"},
+   { "id": 4, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767005926/Copy_of__SAV5438_icqkvf.jpg", "alt": "Glimpse 4", "desc":"Panel discussion"},
+    { "id": 5, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767005926/Copy_of__SAV5438_icqkvf.jpg", "alt": "Glimpse 5", "desc":"Panel discussion"},
+     { "id": 6, "url": "https://res.cloudinary.com/daoth3ia9/image/upload/v1767005926/Copy_of__SAV5438_icqkvf.jpg", "alt": "Glimpse 6", "desc":"Panel discussion"}
+
+]
+
+}

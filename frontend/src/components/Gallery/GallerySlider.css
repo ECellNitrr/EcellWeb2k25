@@ -99,6 +99,9 @@
   transform: none; /* Removing fixed positioning transform */
   /* display: none; */
 }
+.flower-swiper-gallery .swiper-button-prev{
+  transform: rotate(180deg);
+}
 
 /* Left arrow - FIX: Use a negative value to push it outside the Swiper's content area. */
 .flower-swiper-gallery .swiper-button-prev {
@@ -118,6 +121,9 @@
   background: rgba(139, 92, 246, 0.45);
   box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
   transform: scale(1.1);
+}
+.flower-swiper-gallery .swiper-button-prev:hover{
+  transform:rotate(180deg);
 }
 
 /* Arrow icon - FIX: Preventing Swiper's internal rotation and ensuring content is correct */

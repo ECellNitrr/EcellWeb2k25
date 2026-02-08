@@ -75,37 +75,96 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* CONTACT SECTION (Spans 2 columns on desktop) */}
-          <div className="lg:col-span-2 lg:ml-auto">
-            <h4 className="font-bold text-lg text-white mb-8 text-center md:text-left">Contact Us</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 text-center md:text-left">
-              
-              {/* Website & Updates */}
-              <div className="space-y-6 px-4 sm:px-0">
-                <div className="flex flex-col items-center sm:items-start">
-                  <p className="text-xs uppercase tracking-widest font-bold text-ecell-primary mb-4">Website Queries</p>
-                  <div className="space-y-3 text-sm text-gray-400">
-                    <p className="flex items-center gap-2 justify-center sm:justify-start"><Phone size={14}/> +91 62683 26237 (Ayush Shukla)</p>
-                    <p className="flex items-center gap-2 justify-center sm:justify-start"><Phone size={14}/> +91 70113 14730 (Tanmay Srivastava)</p>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center sm:items-start">
-                  <p className="text-xs uppercase tracking-widest font-bold text-ecell-primary mb-4">General Updates</p>
-                  <div className="space-y-3 text-sm text-gray-400">
-                    <p className="flex items-center gap-2 justify-center sm:justify-start"><Phone size={14}/> +91 90397 51295 (Shashank Sharma)</p>
-                    <p className="flex items-center gap-2 justify-center sm:justify-start"><Phone size={14}/> +91 80519 96225 (Abhishek Jha)</p>
-                  </div>
-                </div>
-              </div>
+          {/* CONTACT SECTION */}
+          <div className="flex flex-col max-w-md text-left">
+            <h4 className="font-bold text-xl mb-8">Contact</h4>
 
-              {/* Sponsorship */}
-              <div className="flex flex-col items-center sm:items-start px-4 sm:px-0">
-                <p className="text-xs uppercase tracking-widest font-bold text-ecell-primary mb-4">Sponsorship</p>
-                <div className="space-y-3 text-sm text-gray-400">
-                  <p className="flex items-center gap-2 justify-center sm:justify-start"><Phone size={14}/> +91 63975 19309 (Ritik Pathak)</p>
-                  <p className="flex items-center gap-2 justify-center sm:justify-start"><Phone size={14}/> +91 91749 78791 (Ayush Bhardwaj)</p>
-                </div>
-              </div>
+            {/* WEBSITE QUERIES */}
+            <div className="mb-6">
+              <p className="text-base font-semibold text-gray-200 mb-4">
+                For website queries
+              </p>
+
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 62683 26237 (Ayush Shukla)
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 70113 14730 (Tanmay Srivastava)
+                  </span>
+                </li>
+
+                {/* <li className="flex items-center gap-3">
+        <Mail className="w-4 h-4 text-ecell-primary" />
+        <a
+          href="mailto:webops_ecell@smail.iitm.ac.in"
+          className="text-gray-400 hover:text-ecell-primary"
+        >
+          webops_ecell@smail.iitm.ac.in
+        </a>
+      </li> */}
+              </ul>
+            </div>
+
+            {/* OTHER UPDATES */}
+            <div className="mb-6">
+              <p className="text-base font-semibold text-gray-200 mb-4">
+                For other updates
+              </p>
+
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 90397 51295 (Shashank Sharma)
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 80519 96225 (Abhishek Jha)
+                  </span>
+                </li>
+
+                {/* <li className="flex items-center gap-3">
+                    <Mail className="w-4 h-4 text-ecell-primary" />
+                    <a
+                      href="mailto:sr_ecell@smail.iitm.ac.in"
+                      className="text-gray-400 hover:text-ecell-primary"
+                    >
+                      ecell@smail.iitm.ac.in
+                    </a>
+                  </li> */}
+              </ul>
+            </div>
+
+            {/* SPONSORSHIP QUERIES */}
+            <div>
+              <p className="text-base font-semibold text-gray-200 mb-4">
+                For Sponsorship queries
+              </p>
+
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 63975 19309 (Ritik Pathak)
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-ecell-primary" />
+                  <span className="text-gray-400">
+                    +91 91749 78791 (Ayush Bhardwaj)
+                  </span>
+                </li>
 
             </div>
           </div>

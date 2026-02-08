@@ -1,6 +1,9 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react'; // Import useRef
 
+import gallery_img from '../../assets/Data/gallerydata.json';
+
+
 // Helper component for the smooth scroll-triggered animation (Fade-in / Slide-up)
 function AnimatedContainer({ children, className, delay = 0 }) {
   const ref = useRef(null);
@@ -27,13 +30,14 @@ function AnimatedContainer({ children, className, delay = 0 }) {
 }
 
 
+
 export function GallerySection({ images }) {
-  const events = [
-    { title: 'E-Summit 2025', description: 'Annual entrepreneurship summit', featured: true, },
-    { title: 'Speaker Sessions', description: 'Industry leaders sharing insights', featured: false, },
-    { title: 'Networking Events', description: 'Connect with fellow entrepreneurs', featured: false, },
-    { title: 'Workshops', description: 'Hands-on learning experiences', featured: false, },
-  ];
+  // const events = [
+  //   { title: 'E-Summit 2024', description: 'Annual entrepreneurship summit', featured: true, },
+  //   { title: 'Startup Expo', description: 'Spirit of young entrepreneurs', featured: false, },
+  //   { title: 'Speaker Session', description: 'meet industry leaders', featured: false, },
+  //   { title: 'Shark Tank', description: 'Pitch your ideas to investors', featured: false, },
+  // ];
 
   // Ref for scroll tracking of the entire section
   const sectionRef = useRef(null);
@@ -48,7 +52,7 @@ export function GallerySection({ images }) {
     <div ref={sectionRef} className="px-6 py-16 max-w-7xl mx-auto">
       {/* E-Summit 2025 Title - Smooth fade-in */}
       <AnimatedContainer className="mb-8" delay={0.2}>
-        <h2 className="italic text-xl text-white mb-2">E-Summit 2025</h2>
+        <h2 className="italic text-xl text-white mb-2">E-Summit 2024</h2>
         <div className="w-[242px] h-[1px] bg-white" />
       </AnimatedContainer>
 
@@ -63,15 +67,15 @@ export function GallerySection({ images }) {
         >
           {/* Apply the transformed Y value to the image for parallax */}
           <motion.img
-            src={images.large}
+            src={images[0].large}
             alt="E-Summit 2025"
             className="w-full h-[500px] object-cover"
             style={{ y: largeImageY }} // PARALLAX EFFECT APPLIED HERE
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
              <div className="absolute bottom-0 left-0 right-0 p-6">
-               <h3 className="text-white mb-2">{events[0].title}</h3>
-               <p className="text-white/80">{events[0].description}</p>
+               <h3 className="text-white mb-2">{images[0].title}</h3>
+               <p className="text-white/80">{images[0].description}</p>
              </div>
           </div>
         </motion.div>
@@ -83,14 +87,14 @@ export function GallerySection({ images }) {
           transition={{ duration: 0.3 }}
         >
           <img
-            src={images.topRight}
+            src={images[1].topRight}
             alt="Speaker Sessions"
             className="w-full h-[222px] object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
              <div className="absolute bottom-0 left-0 right-0 p-4">
-               <h4 className="text-white">{events[1].title}</h4>
-               <p className="text-white/80">{events[1].description}</p>
+               <h4 className="text-white">{images[1].title}</h4>
+               <p className="text-white/80">{images[1].description}</p>
              </div>
           </div>
         </motion.div>
@@ -102,10 +106,10 @@ export function GallerySection({ images }) {
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
-          <img src={images.bottomLeft} alt="Networking Events" className="w-full h-[222px] object-cover" />
+          <img src={images[2].bottomLeft} alt="Networking Events" className="w-full h-[222px] object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
              <div className="absolute bottom-0 left-0 right-0 p-4">
-               <p className="text-white">{events[2].title}</p>
+               <p className="text-white">{images[2].title}</p>
              </div>
           </div>
         </motion.div>
@@ -115,10 +119,10 @@ export function GallerySection({ images }) {
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
-          <img src={images.bottomMiddle} alt="Workshops" className="w-full h-[222px] object-cover" />
+          <img src={images[3].bottomMiddle} alt="Workshops" className="w-full h-[222px] object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
              <div className="absolute bottom-0 left-0 right-0 p-4">
-               <p className="text-white">{events[3].title}</p>
+               <p className="text-white">{images[3].title}</p>
              </div>
           </div>
         </motion.div>
@@ -128,15 +132,18 @@ export function GallerySection({ images }) {
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
-          <img src={images.bottomRight} alt="Additional Event" className="w-full h-[222px] object-cover" />
+          <img src={images[4].bottomRight} alt="Additional Event" className="w-full h-[222px] object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </motion.div>
+
       </AnimatedContainer>
+        {/* additonal esummit pics */}
+        <EventCategory title="" images={gallery_img.other_EsummitImg} />
 
       {/* Additional Event Sections */}
       <div className="mt-16 space-y-12">
-        <EventCategory title="Speaker Sessions" images={[images.large, images.topRight, images.bottomLeft]} />
-        <EventCategory title="Workshops & Bootcamps" images={[images.bottomMiddle, images.bottomRight, images.large]} />
+        <EventCategory title="Speaker Sessions" images={gallery_img.SPEAKER_SESSION_IMAGES} />
+        <EventCategory title="Other Glimps" images={gallery_img.OTHER_IMAGES} />
       </div>
     </div>
   );
@@ -148,8 +155,13 @@ function EventCategory({ title, images }) {
     // Wrap the container for a smooth overall fade-in
     <AnimatedContainer className="space-y-6" delay={0.3}> 
       <div>
-        <h2 className="italic text-white text-xl mb-2">{title}</h2>
-        <div className="w-[242px] h-[1px] bg-white" />
+       {title && (
+        <>
+          <h2 className="italic text-white text-xl mb-2">{title}</h2>
+          <div className="w-[242px] h-[1px] bg-white" />
+        </>
+      )}
+         
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -176,13 +188,13 @@ function EventCategory({ title, images }) {
             }} 
           >
             <img
-              src={image}
+              src={image.url}
               alt={`${title} ${index + 1}`}
               className="w-full h-[250px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-white">Event {index + 1}</p>
+                <p className="text-white">{images[index].desc}</p>
               </div>
             </div>
           </motion.div>
