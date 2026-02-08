@@ -9,6 +9,7 @@ import Events from './components/Events/Events.jsx'
 import './App.css'
 import Teams from './components/Teams.jsx'
 import Sponsors from './components/Spons/sponsor.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
