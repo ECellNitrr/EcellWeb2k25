@@ -1,0 +1,52 @@
+commit ab9378fa74438a296f8970ff05fe2845af9b5bf9
+Author: tanmaysrivastava45 <tanmaysrivastava9868@gmail.com>
+Date:   Tue Dec 30 01:25:13 2025 +0530
+
+    Sponsors page
+
+diff --git a/frontend/src/components/Navbar.jsx b/frontend/src/components/Navbar.jsx
+index 510e975..e7f5031 100644
+--- a/frontend/src/components/Navbar.jsx
++++ b/frontend/src/components/Navbar.jsx
+@@ -74,9 +74,9 @@ export default function Navbar() {
+     { name: "About", href: "/about" },
+     { name: "Events", href: "/events" },
+     { name: "Gallery", href: "/gallery" },
++    { name: "Sponsors", href: "/spons"},
+     { name: "Team", href: "/team" },
+-    { name: "Contact", href: "/contact" },
+-
++    { name: "Contact", href: "/contact" }
+   ];
+ 
+   return (
+
+commit edca24d621d02945c0ebf9a2611b7a6091dfcd0a
+Merge: 4f7789d bfd2419
+Author: Rahulsahu7389 <rahulsahuppd@gmail.com>
+Date:   Mon Dec 29 17:34:02 2025 +0530
+
+    added the white logo and changed favicon
+
+commit 51cf0c9a1d56d451cff2f0c8f2cec3117b7c94b0
+Author: Ashutosh Behera <ashupoco66@gmail.com>
+Date:   Sun Dec 28 00:29:17 2025 +0530
+
+    Events page updated content and images of past and upcoming events
+
+diff --git a/frontend/src/components/Navbar.jsx b/frontend/src/components/Navbar.jsx
+index 12af0e7..be305ce 100644
+--- a/frontend/src/components/Navbar.jsx
++++ b/frontend/src/components/Navbar.jsx
+@@ -73,8 +73,10 @@ export default function Navbar() {
+     { name: "Home", href: "/" },
+     { name: "About", href: "/about" },
+     { name: "Events", href: "/events" },
++    { name: "Gallery", href: "/gallery" },
+     { name: "Team", href: "/team" },
+-    { name: "gallery", href: "/gallery" },
++    { name: "Contact", href: "/contact" },
++
+   ];
+ 
+   return (
