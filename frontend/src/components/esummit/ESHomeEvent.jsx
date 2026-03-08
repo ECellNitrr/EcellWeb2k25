@@ -110,82 +110,96 @@ export default function ESHomeEvent() {
                         </h2>
                     </div>
 
-                    <button
-                        className={`
-              px-5 py-3 border rounded-xl font-medium flex items-center gap-2
-              border-ecell-primary text-ecell-primary
-              hover:bg-ecell-primary hover:text-white transition-all duration-700 delay-200
-              ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}
-            `}
-                    >
-                        <Link to="/events">View All Events</Link> <ArrowUpRight className="w-4 h-4" />
-                    </button>
+                    <div className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}>
+                        <Link to="/events" className="inline-block">
+                            <button className="relative overflow-hidden group px-6 py-3 border rounded-xl font-medium flex items-center gap-2 border-ecell-primary text-ecell-primary transition-all duration-500 hover:border-sky-400/50 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]">
+                                <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-sky-500 to-cyan-400 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+                                <span className="relative z-10 flex items-center gap-2 font-bold group-hover:text-white transition-colors duration-500 tracking-wide">
+                                    View All Events <ArrowUpRight className="w-4 h-4 group-hover:text-white" />
+                                </span>
+                            </button>
+                        </Link>
+                    </div>
                 </div>
 
-                {/* ⭐ EVENTS GRID — PARALLAX + FADE */}
+                {/* ⭐ EVENTS GRID — FRAMER MOTION ENTRANCE + PARALLAX + FADE */}
                 <motion.div
                     style={{ y: gridY, opacity: gridOpacity }}
-                    className="grid lg:grid-cols-2 gap-6"
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.1 }}
+                    variants={{
+                        hidden: {},
+                        show: {
+                            transition: { staggerChildren: 0.15 }
+                        }
+                    }}
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6"
                 >
                     {events.map((event, index) => (
-                        <div
+                        <motion.div
                             key={event.title}
+                            variants={{
+                                hidden: { opacity: 0, y: 40 },
+                                show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                            }}
                             className={`
-                group relative rounded-2xl p-6 cursor-pointer
-                bg-white/5 backdrop-blur-xl border border-white/10
-                transition-all duration-500
-                ${hoveredIndex === index ? "border-ecell-primary/50 scale-[1.02]" : "hover:border-white/30"}
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
-              `}
-                            style={{ transitionDelay: `${140 + index * 60}ms` }}
+                                group relative rounded-2xl p-6 cursor-pointer
+                                bg-white/5 backdrop-blur-lg border border-white/10
+                                transition-all duration-400
+                                hover:border-ecell-primary/50 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_var(--tw-shadow-color)] hover:shadow-ecell-primary/30
+
+                                before:content-[''] before:absolute before:-inset-[2px] before:-z-10 before:rounded-[inherit] before:bg-gradient-to-r before:from-ecell-primary/50 before:via-ecell-secondary/50 before:to-ecell-accent/50 before:blur-md before:opacity-30 group-hover:before:opacity-100 group-hover:before:blur-xl group-hover:before:-inset-[3px] before:transition-all before:duration-400
+                            `}
                             onMouseEnter={() => setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(null)}
                         >
-                            {/* Status Tags */}
-                            <div className="flex items-center justify-between mb-4">
-                                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-ecell-primary/20 text-ecell-primary border border-ecell-primary/30">
-                                    {event.type}
-                                </span>
+                            <div className="relative z-10 w-full h-full flex flex-col">
+                                {/* Status Tags */}
+                                <div className="flex items-center justify-between mb-4">
+                                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-ecell-primary/20 text-ecell-primary border border-ecell-primary/30">
+                                        {event.type}
+                                    </span>
 
-                                <span
-                                    className={`
+                                    <span
+                                        className={`
                     px-3 py-1 text-xs font-semibold rounded-full
                     ${event.status === "Upcoming"
-                                            ? "bg-ecell-accent/20 text-ecell-accent border border-ecell-accent/30"
-                                            : event.status === "Completed"
-                                                ? "bg-gray-700 text-gray-400 border border-gray-600"
-                                                : "bg-ecell-secondary/20 text-ecell-secondary border border-ecell-secondary/30"
-                                        }
+                                                ? "bg-ecell-accent/20 text-ecell-accent border border-ecell-accent/30"
+                                                : event.status === "Completed"
+                                                    ? "bg-gray-700 text-gray-400 border border-gray-600"
+                                                    : "bg-ecell-secondary/20 text-ecell-secondary border border-ecell-secondary/30"
+                                            }
                   `}
-                                >
-                                    {event.status}
-                                </span>
-                            </div>
-
-                            {/* Title */}
-                            <h3 className="font-bold text-2xl mb-3 group-hover:text-ecell-mine transition-colors">
-                                {event.title}
-                            </h3>
-
-                            {/* Description */}
-                            <p className="text-gray-300 mb-6 line-clamp-2">
-                                {event.description}
-                            </p>
-
-                            {/* Meta Info */}
-                            <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-                                <div className="flex items-center gap-2">
-                                    <Calendar className="w-4 h-4 text-ecell-primary" />
-                                    <span>{event.date}</span>
+                                    >
+                                        {event.status}
+                                    </span>
                                 </div>
 
-                                <div className="flex items-center gap-2">
-                                    <MapPin className="w-4 h-4 text-ecell-primary" />
-                                    <span>{event.location}</span>
+                                {/* Title */}
+                                <h3 className="font-bold text-2xl mb-3 group-hover:text-ecell-mine transition-colors duration-300">
+                                    {event.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className="text-gray-300 mb-6 line-clamp-2">
+                                    {event.description}
+                                </p>
+
+                                {/* Meta Info */}
+                                <div className="flex flex-wrap gap-4 text-sm text-gray-400 mt-auto">
+                                    <div className="flex items-center gap-2">
+                                        <Calendar className="w-4 h-4 text-ecell-primary transition-colors duration-300 group-hover:text-white group-hover:brightness-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                                        <span>{event.date}</span>
+                                    </div>
+
+                                    <div className="flex items-center gap-2">
+                                        <MapPin className="w-4 h-4 text-ecell-primary transition-colors duration-300 group-hover:text-white group-hover:brightness-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                                        <span>{event.location}</span>
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
+                        </motion.div>
                     ))}
                 </motion.div>
             </motion.div>

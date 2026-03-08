@@ -137,27 +137,38 @@ export default function ESHomeAbout() {
                     E-Summit NIT Raipur is India's leading entrepreneurship summit fostering a vibrant startup culture. It brings together brilliant founders, innovators, and investors for unparalleled networking and innovation.
                 </p>
 
-                {/* ⭐ FEATURE CARDS — LOCAL PARALLAX */}
+                {/* ⭐ FEATURE CARDS — FRAMER STAGGER */}
                 <motion.div
                     style={{ y: gridY, opacity: gridOpacity }}
-                    className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mt-16"
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{
+                        hidden: {},
+                        show: {
+                            transition: { staggerChildren: 0.15 }
+                        }
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mt-16"
                 >
                     {features.map((feature, index) => {
                         const Icon = feature.icon;
                         return (
-                            <div
+                            <motion.div
                                 key={index}
+                                variants={{
+                                    hidden: { opacity: 0, y: 40 },
+                                    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                                }}
                                 className={`
-                  group rounded-2xl p-8 bg-white/5 backdrop-blur-xl border border-white/10
-                  hover:border-ecell-primary/50 transition-all duration-300
-                  hover:scale-[1.03] hover:shadow-xl hover:shadow-ecell-primary/20
+                                    relative group rounded-2xl p-8 bg-white/5 backdrop-blur-lg border border-white/10
+                                    transition-all duration-400
+                                    hover:border-ecell-primary/50 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_var(--tw-shadow-color)] hover:shadow-ecell-primary/30
 
-                  opacity-0 translate-y-10 
-                  ${isVisible ? "opacity-100 translate-y-0" : ""}
-                `}
-                                style={{ transitionDelay: `${200 + index * 120}ms` }}
+                                    before:content-[''] before:absolute before:-inset-[2px] before:-z-10 before:rounded-[inherit] before:bg-gradient-to-r before:from-ecell-primary/50 before:via-ecell-secondary/50 before:to-ecell-accent/50 before:blur-md before:opacity-30 group-hover:before:opacity-100 group-hover:before:blur-lg group-hover:before:-inset-[3px] before:transition-all before:duration-400
+                                `}
                             >
-                                <div className="flex items-start gap-5">
+                                <div className="relative z-10 flex items-start gap-5">
 
                                     {/* Icon */}
                                     <div
@@ -165,12 +176,12 @@ export default function ESHomeAbout() {
                       w-14 h-14 rounded-xl 
                       bg-ecell-vibrant-orange/10 border border-ecell-vibrant-orange/30  /* 🛠️ MODIFIED: Orange BG/Border */
                       flex items-center justify-center shrink-0
-                      group-hover:bg-ecell-vibrant-orange/20 group-hover:scale-110 /* 🛠️ MODIFIED: Orange Hover BG */
+                      group-hover:bg-ecell-vibrant-orange/20 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(255,165,0,0.4)]
                       transition-all duration-300
                     "
                                     >
                                         {/* 🛠️ MODIFIED: Magenta Icon Color */}
-                                        <Icon className="w-7 h-7 text-ecell-vibrant-orange" />
+                                        <Icon className="w-7 h-7 text-ecell-vibrant-orange transition-colors duration-300 group-hover:text-ecell-vibrant-magenta group-hover:brightness-125" />
                                     </div>
 
                                     {/* Text */}
@@ -184,21 +195,21 @@ export default function ESHomeAbout() {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </motion.div>
 
-                <button
-                    className={`
-              px-5 py-3 border rounded-xl font-medium flex items-center gap-2
-              border-ecell-primary text-ecell-primary m-auto mt-25
-              hover:bg-ecell-primary hover:text-white transition-all duration-700 delay-200
-              ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}
-            `}
-                >
-                    <Link to="/about">Know More</Link>  <ArrowUpRight className="w-4 h-4" />
-                </button>
+                <div className={`mt-25 flex justify-center transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}>
+                    <Link to="/about" className="inline-block">
+                        <button className="relative overflow-hidden group px-6 py-3 border rounded-xl font-medium flex items-center gap-2 border-ecell-primary text-ecell-primary transition-all duration-500 hover:border-sky-400/50 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]">
+                            <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-sky-500 to-cyan-400 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+                            <span className="relative z-10 flex items-center gap-2 font-bold group-hover:text-white transition-colors duration-500 tracking-wide">
+                                Know More <ArrowUpRight className="w-4 h-4 group-hover:text-white" />
+                            </span>
+                        </button>
+                    </Link>
+                </div>
 
             </motion.div>
 

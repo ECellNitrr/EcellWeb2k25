@@ -101,15 +101,14 @@ export default function ESHome() {
                         transition={{ delay: 0.45, duration: 0.6 }}
                         className="mt-8 flex justify-center gap-4"
                     >
-                        <button
-                            className="
-              px-6 py-3 rounded-xl font-medium border border-white/20
-              text-gray-200 hover:bg-white/10 transition
-            "
-                        >
-                            <Link to="/events">Explore E-Summit Events</Link>
-
-                        </button>
+                        <Link to="/events" className="inline-block">
+                            <button className="relative overflow-hidden group px-6 py-3 rounded-xl font-medium border border-white/20 text-gray-200 transition-all duration-500 hover:border-sky-400/50 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]">
+                                <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-sky-500 to-cyan-400 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+                                <span className="relative z-10 font-bold group-hover:text-white transition-colors duration-500 tracking-wide">
+                                    Explore E-Summit Events
+                                </span>
+                            </button>
+                        </Link>
                     </motion.div>
                 </motion.div>
             </section>
