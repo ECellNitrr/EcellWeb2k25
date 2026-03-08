@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import {Route ,Routes} from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import About_E_CELL from './components/ui/about_E_CELL.jsx'
 import Gallery from './components/Gallery'
@@ -9,6 +9,7 @@ import Events from './components/Events/Events.jsx'
 import './App.css'
 import Teams from './components/Teams.jsx'
 import Sponsors from './components/Spons/sponsor.jsx'
+import ESHome from './components/esummit/ESHome'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +22,8 @@ function App() {
         <Route path='/events' element={<Events />} />
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/team' element={<Teams />} />
-        <Route path='/spons'element={<Sponsors />} />
+        <Route path='/spons' element={<Sponsors />} />
+        <Route path='/esummit' element={<ESHome />} />
       </Routes>
     </>
   )

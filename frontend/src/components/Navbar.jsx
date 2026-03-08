@@ -74,9 +74,10 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     { name: "Events", href: "/events" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Sponsors", href: "/spons"},
+    { name: "Sponsors", href: "/spons" },
     { name: "Team", href: "/team" },
-    { name: "Contact", href: "/contact" }
+    { name: "Contact", href: "/contact" },
+    { name: "E-Summit", href: "/esummit" }
   ];
 
   return (
@@ -97,8 +98,8 @@ export default function Navbar() {
           ">
             {/* <Rocket className="h-5 w-5 text-white" /> */}
             <div className="p-[3px] ">
-  <Logo className="h-5 w-5 " />
-</div>
+              <Logo className="h-5 w-5 " />
+            </div>
           </div>
 
           <div>
