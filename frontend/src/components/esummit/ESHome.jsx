@@ -10,7 +10,7 @@ import ESHomeAbout from "./ESHomeAbout";
 import ESHomeGallery from "./ESHomeGallery";
 import ESHomeSponsors from "./ESHomeSponsors";
 import PastSpeakers from "../PastSpeaker"; // Adjusted path to PastSpeaker.jsx
-
+import ESEventsListing from "./ESEventsListing";
 export default function ESHome() {
     const ref = useRef(null);
     const [offsetY, setoffsetY] = useState(0);
@@ -116,7 +116,8 @@ export default function ESHome() {
             {/* 🧩 3. REMAINING SECTIONS */}
             <div className="relative z-10 bg-ecell-bg">
                 <ESHomeAbout />
-                <ESHomeEvent />
+                {/* <ESHomeEvent /> */}
+                <ESEventsListing />
                 <PastSpeakers />
                 <ESHomeSponsors />
                 <ESHomeGallery />
