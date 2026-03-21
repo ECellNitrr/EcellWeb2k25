@@ -4,8 +4,8 @@
     "type": "upcoming",
     "title": "STARTUP EXPO",
     "shortDescription": "The Startup Expo beckons young innovators to unveil their visions before a panel of seasoned experts and investors. It's your gateway to funding, recognition, and turning ideas into prosperous realities.",
-    "date": "TBD",
-    "location": "DDU Auditorium",
+    "date": "22nd - 23rd March 2026",
+    "location": "Hira Hall",
     "imageUrl": "https://res.cloudinary.com/daoth3ia9/image/upload/v1773336290/StartupExpo_yr74aj.png",
     "details": "The Startup Expo is a premier platform designed to bridge the gap between visionary student startups and the professional investment ecosystem[cite: 86, 173]. Participants get the unique opportunity to exhibit their products, network with industry leaders, and pitch directly to angel investors and venture capitalists for potential seed funding[cite: 173, 176]. It is a celebration of innovation where ideas are transformed into scalable business models"
   },
@@ -14,8 +14,8 @@
     "type": "upcoming",
     "title": "B-ODYSSEY",
     "shortDescription": "B-Odyssey is an immersive brand marketing challenge that tasks participants with creating compelling brand identities and innovative advertising campaigns for diverse products or services.",
-    "date": "TBD",
-    "location": "DDU Auditorium",
+    "date": "24th March 2026",
+    "location": "PPT Hall",
     "imageUrl": "https://res.cloudinary.com/daoth3ia9/image/upload/v1773335040/B-Odyssey_zqfssw.png",
     "details": "B-Odyssey serves as a creative battlefield for students to showcase their marketing acumen and brand-building skills. The competition requires teams to develop end-to-end marketing strategies, including brand positioning, visual storytelling, and multi-channel promotional tactics. Participants must demonstrate how to effectively capture target audiences and differentiate a brand in a saturated market through unique value propositions. It is a high-energy platform designed to push the boundaries of creativity, digital marketing trends, and strategic consumer engagement."
   },
@@ -24,8 +24,8 @@
     "type": "upcoming",
     "title": "BIZ-RESCUE",
     "shortDescription": "Biz-Rescue is a competitive case study challenge where participants analyze complex, real-world corporate crises to develop innovative and sustainable business recovery strategies.",
-    "date": "TBD",
-    "location": "DDU Auditorium",
+    "date": "22nd - 23rd March 2026",
+    "location": "PPT Hall",
     "imageUrl": "https://res.cloudinary.com/daoth3ia9/image/upload/v1773335495/Biz-Rescue_1_tchjt4.png",
     "details": "Biz-Rescue is a premier business simulation event designed to test the analytical prowess and problem-solving skills of aspiring entrepreneurs. Participants are presented with actual business failures or operational bottlenecks and must diagnose root causes while proposing actionable financial and marketing solutions. The competition emphasizes strategic thinking, feasibility, and crisis management, challenging teams to pitch their 'rescue' plans to a panel of experts. It serves as an intensive platform for students to apply theoretical knowledge to high-stakes, real-world industry scenarios."
   },
@@ -34,8 +34,8 @@
     "type": "upcoming",
     "title": "IGNITION B-MODEL",
     "shortDescription": "A Business Model competition poised to bridge the gap between innovative entrepreneurs and visionary investors, aiming to foster growth and innovation for emerging businesses in India.",
-    "date": "TBD",
-    "location": "DDU Auditorium",
+    "date": "22nd - 23rd March 2026",
+    "location": "Vivekananda Hall",
     "imageUrl": "https://res.cloudinary.com/daoth3ia9/image/upload/v1773335116/Ignition_B-Model_vmab2l.png",
     "details": "Ignition is a high-stakes Business Model competition poised to bridge the gap between innovative entrepreneurs and visionary investors. Participants are required to present comprehensive business plans aimed at fostering growth and innovation for emerging businesses in India. Judged by a panel of seasoned experts, this event acts as a catalyst for emerging businesses, providing them with the professional feedback and exposure required to thrive."
   },
@@ -44,11 +44,12 @@
     "type": "upcoming",
     "title": "STRATEGICA",
     "shortDescription": "Strategica is  cricket auction simulation at NIT Raipur where teams use a virtual budget to outmaneuver rivals and build the ultimate winning squad.",
-    "date": "TBD",
-    "location": "DDU Auditorium",
+    "date": "22nd - 23rd March 2026",
+    "location": "Smart Classroom (G4)",
     "imageUrl": "https://res.cloudinary.com/daoth3ia9/image/upload/v1773336293/Strategica_kaiknm.png",
     "details": "Strategica is a premier tactical event at NIT Raipur that blends sports analytics with high-stakes financial management. After a competitive screening round, teams enter a live mock auction where they must balance limited resources against player valuations. This challenge tests game theory and high-pressure decision-making, requiring participants to scout talent and construct the most statistically superior roster to win."
   },
+  
   {
     "id": 10,
     "type": "past",
