@@ -416,7 +416,6 @@ export default function Hero() {
     // </div>
   );
 }
-
 // 🔵 Social Icon Mini-Component
 const SocialIcon = ({ icon, href }) => (
   <motion.a
